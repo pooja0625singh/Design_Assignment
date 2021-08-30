@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Products </title>
+
+<style type="text/css">
+	
+	* {
+    box-sizing: border-box
+  }
+  
+  .upload-file{
+  	border:2px dashed #D3D3D3;
+  	height: 150px;
+  	width: 457px;
+  	border-radius: 10px;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	flex-direction: column;
+  }
+
+ 
+  input[type=text], textarea{
+  	width: 100%;
+  	padding: 8px;
+  	border: 1px solid #ccc ;
+  	border-radius: 4px;
+  	box-sizing: border-box;
+  	resize: vertical;
+  }
+
+  .product-description{
+    margin-top: 20px;
+  }
+
+  input[type=button]{
+  	
+  	border-radius: 15px;
+  	border:1px solid dodgerblue;
+  	padding: 5px 33px 5px 33px;
+
+  }
+
+  label{
+  	padding: 10px 10px 10px 0;
+  	display: inline-block;
+  }
+
+
+.save-button, .reset-button{
+  padding: 10px 20px;
+  font-size: 12px;
+  border-radius: 15px;
+  background-color: blue;
+  color: white;
+  }
+
+.save-button button:hover{
+  background-color: #d46e0e;
+  color: white;
+  }
+
+.reset-button button:hover{
+  background-color: #d46e0e;
+  color: white;
+  }
+
+button:hover {
+  background-color: grey;
+  color: white;
+  }
+
+.container {
+   margin:auto;
+   width: 500px;
+   height: 650px;
+   position:relative;
+   border-radius: 5px;
+   background-color: #C9DFEC;
+   padding: 20px 20px 30px 20px;
+   font-family: Arial;
+   font-size: 12px;
+   color: black;
+   border-left: 1px solid black;
+  }
+
+ 
+</style>
+
+<script type="text/javascript">
+
+
+	function validate_form() {
+		var productName = document.forms["productForm"]["Name"];
+		var brandName = document.forms["productForm"]["Brand"];
+		var quantity = document.forms["productForm"]["Quantity"];
+		var price = document.forms["productForm"]["Price"];
+		var productImage = document.forms["productForm"]["Image"];
+
+
+
+		if(productName == "") {
+			window.alert("Please enter product name.")
+			product-name.focus();
+			return false;
+		}
+
+		if(brandName == "") {
+			window.alert("Please enter brand name.")
+			brand-name.focus();
+			return false;
+		}
+
+		if(quantity == "") {
+			window.alert("Please enter quantity.")
+			quantity.focus();
+			return false;
+		}
+
+		if(price == "") {
+			window.alert("Please enter price.")
+			price.focus();
+			return false;
+		}
+
+		if(productImage == "") {
+			window.alert("Please upload product image.")
+			productImage.focus();
+			return false;
+		}
+
+		return true;
+
+	}
+
+	function show(){
+		alert("Product data saved");
+	}
+</script>
+
+</head>
+<body>
+<div class="container">
+<form name="productForm" action="/submit.php" onsubmit="return validate_form()" method="post">
+
+<div class="product-name">
+<label> PRODUCT NAME </label> <br>
+<input type="text" name="Name" required> <br><br>
+</div>
+
+<div class="brand">
+<label>BRAND</label> <br>
+<input type="text" name="Brand" required> <br><br>
+</div>
+
+<div class="quantity">
+<label> QUANTITY </label> <br>
+<input type="text" name="Quantity" required> <br><br>
+</div>
+
+<div class="price">
+<label> PRICE </label> <br>
+<input type="text" name="Price" required> <br><br>
+</div>
+
+<div class="product-image">
+<label> PRODUCT IMAGE </label> <br>
+<div class="upload-file">
+<input type="button" value="Upload File" style="color: dodgerblue" name="Image" required> <br><br>
+</div>
+</div>
+
+<div style="text-align: center">
+<button class="save-button" style="color: white" onclick="show()">Save</button>
+<button class="reset-button" style="color: white">Reset</button>
+</div>
+
+</form>
+</div>
+</body>
+</html>
+ 

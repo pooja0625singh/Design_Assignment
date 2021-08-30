@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>View Product</title>
+    <style type="text/css">
+    .table
+    {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 0.9em;
+      min-width: 400px;
+      border-radius: 5px 5px 0 0;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      padding-bottom:15px;
+      column-count: 6;
+      column-gap: 25px
+    }
+    thead tr {
+      text-align: left;
+      font-weight: bold;
+    }
+    table, th, td {
+    padding: 5px;
+    font-size: 1.5em;
+    text-align: left;
+    border-bottom: 1px solid rgb(131, 190, 245);
+    }
+    table {
+    border-spacing: 30px;
+    }
+  
+    ​table tr {
+        border-bottom: 1px solid black;
+    }​
+
+        .pagination {
+      display: inline-block;
+    }
+
+    .pagination a {
+      color: black;
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+
+    .pagination a.active {
+      background-color: #99d2f8;
+      color: white;
+    }
+
+    .pagination a:hover:not(.active) {
+        background-color: #ddd;
+    }
+
+    body{
+      font-size: 0.9em;
+    }
+
+    .button{ 
+
+      border: none;
+      color: white;
+      padding: 14px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer; 
+      border-radius: 50%; 
+    }
+
+    .add-products button {
+      padding: 10px 20px;
+      font-size: 12px;
+      border-radius: 15px;
+      background-color: rgb(252, 158, 90);
+      color: white;
+      display: inline-block;
+      }
+
+    .add-products button:hover{
+      background-color: #d46e0e;
+      color: white;
+      }
+
+    .go-to-home button {
+      padding: 10px 20px;
+      font-size: 12px;
+      border-radius: 15px;
+      background-color: rgb(252, 158, 90);
+      color: white;
+    }
+
+    .go-to-home button:hover{
+      background-color: #d46e0e;
+      color: white;
+      }
+
+    button:hover {
+      background-color: rgb(43, 156, 248);
+      color: white;
+      }
+
+      .table-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+
+</style>
+
+
+</head>
+
+<body margin-left: 40px; margin-top: 30px; style="background-color: #F0FFFF;">
+  <div class="table-header">
+    <div class="view-products">
+        <h1>View products</h1>
+    </div>
+    <div style="display: flex; justify-content: flex-end;">
+    <div class="add-products">
+        <a href="product_Form.html"><button class="btn-warning" >Add a product</button></a>
+    </div>
+    <div class="go-to-home">
+        <a href="dashboard.html"><button class="btn-warning">Home</button></a>
+    </div>
+    </div>
+   </div>
+        
+   
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Product Name</th>
+            <th>Quantity Available</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>
+                <div class="pagination">
+                <a href="View-Product-1stPage.html">&laquo;</a>
+                <a class="active" href="View-Product-1stPage.html">1</a>
+                <a href="View-Product-2ndPage.html">2</a>
+                <a href="View-Product-2ndPage.html">&raquo;</a>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+           
+          <tr>
+            <td style="font-size:0px">
+                <img src="shoe1.jpg" height="50px" width="50px" style="display:block;"> 
+            </td>
+            <td>Nike Orange Comfortable shole</td>
+            <td>30</td>
+            <td>6,000</td>
+            <td text-align="center">In-stock</td>
+            <td style="text-align:center;">
+              <div class="button">  <button class="clsActionButton moveright" id="idAddButton" onclick="idEditButton_onclick();">Edit</button> </div>
+
+              <div class="button">  <button class="clsActionButton moveright" id="idEditButton" onclick="idDeleteButton_onclick();">Delete</button> </div>
+
+            </td>
+          </tr>
+          <tr class="active-row">
+            <td style="font-size:0px">
+                <img src="shoe2.jpg" height="50px" width="50px" style="display:block;"> 
+            </td>
+            <td>Brown Leather shoe</td>
+            <td>25</td>
+            <td>10,000</td>
+            <td>In-stock</td>
+            <td style="text-align:center;">
+             <div class="button">   <button class="clsActionButton moveright" id="idAddButton" onclick="idEditButton_onclick();">Edit</button> </div>
+
+             <div class="button">   <button class="clsActionButton moveright" id="idEditButton" onclick="idDeleteButton_onclick();">Delete</button> </div>
+
+            </td>
+          </tr>
+          <tr>
+            <td style="font-size:0px">
+                <img src="shoe3.jpg" height="50px" width="50px" style="display:block;"> 
+            </td>
+            <td>Black-White comfortable converso shoe</td>
+            <td>60</td>
+            <td>4,000</td>
+            <td>In-stock</td>
+            <td style="text-align:center;">
+            <div class="button">    <button class="clsActionButton moveright" id="idAddButton" onclick="idEditButton_onclick();">Edit</button> </div>
+
+             <div class="button">   <button class="clsActionButton moveright" id="idEditButton" onclick="idDeleteButton_onclick();">Delete</button> </div>
+
+            </td>
+          </tr>
+          <tr>
+            <td style="font-size:0px">
+                <img src="shoe4.jpg" height="50px" width="50px" style="display:block;"> 
+            </td>
+            <td>Blue Adidas</td>
+            <td>0</td>
+            <td>9,000</td>
+            <td>Out-of-Stock</td>
+            <td style="text-align:center;">
+             <div class="button">   <button class="clsActionButton moveright" id="idAddButton" onclick="idEditButton_onclick();">Edit</button> </div>
+
+             <div class="button">   <button class="clsActionButton moveright" id="idEditButton" onclick="idDeleteButton_onclick();">Delete</button> </div>
+
+            </td>
+          </tr>
+          <tr>
+            <td style="font-size:0px">
+                <img src="shoe5.jpg" height="50px" width="50px" style="display:block;"> 
+            </td>
+            <td>Green adidas shoe</td>
+            <td>20</td>
+            <td>5,000</td>
+            <td>In-stock</td>
+            <td style="text-align:center;">
+             <div class="button">   <button class="clsActionButton moveright" id="idAddButton" onclick="idEditButton_onclick();">Edit</button> </div>
+
+              <div class="button">  <button class="clsActionButton moveright" id="idEditButton" onclick="idDeleteButton_onclick();">Delete</button> </div>
+
+            </td>
+          </tr>
+          <tr>
+            <td style="font-size:0px">
+                <img src="shoe6.jpg" height="50px" width="50px" style="display:block;"> 
+            </td>
+            <td>Brown shiny leather</td>
+            <td>100</td>
+            <td>15,000</td>
+            <td>In-stock</td>
+            <td style="text-align:center;">
+             <div class="button">   <button class="clsActionButton moveright" id="idAddButton" onclick="idEditButton_onclick();">Edit</button> </div>
+
+             <div class="button">   <button class="clsActionButton moveright" id="idEditButton" onclick="idDeleteButton_onclick();">Delete</button> </div>
+
+            </td>
+          </tr>
+          <tr>
+            <td style="font-size:0px">
+                <img src="shoe7.jpg" height="50px" width="50px" style="display:block;"> 
+            </td>
+            <td>Black Comfortable Converso Shoe</td>
+            <td>65</td>
+            <td>5000</td>
+            <td>Out-of-Stock</td>
+            <td style="text-align:center;">
+            <div class="button">    <button class="clsActionButton moveright" id="idAddButton" onclick="idEditButton_onclick();">Edit</button> </div>
+
+             <div class="button">   <button class="clsActionButton moveright" id="idEditButton" onclick="idDeleteButton_onclick();">Delete</button> </div>
+
+            </td>
+          </tr>
+          <tr>
+            <td style="font-size:0px">
+                <img src="shoe8.jpg" height="50px" width="50px" style="display:block;"> 
+            </td>
+            <td>Black Leather Shoe</td>
+            <td>10</td>
+            <td>7,000</td>
+            <td>In-Stock</td>
+            <td style="text-align:center;">
+             <div class="button">   <button class="clsActionButton moveright" id="idAddButton" onclick="idEditButton_onclick();">Edit</button> </div>
+
+              <div class="button">  <button class="clsActionButton moveright" id="idEditButton" onclick="idDeleteButton_onclick();">Delete</button> </div>
+
+            </td>
+          </tr>
+          <tr>
+            <td style="font-size:0px">
+                <img src="shoe9.jpg" height="50px" width="50px" style="display:block;"> 
+            </td>
+            <td>Brown high-heel shoe</td>
+            <td>35</td>
+            <td>15,000</td>
+            <td>In-Stock</td>
+            <td style="text-align:center;">
+             <div class="button">   <button class="clsActionButton moveright" id="idAddButton" onclick="idEditButton_onclick();">Edit</button> </div>
+
+             <div class="button">   <button class="clsActionButton moveright" id="idEditButton" onclick="idDeleteButton_onclick();">Delete</button> </div>
+
+            </td>
+          </tr>
+          <tr>
+            <td style="font-size:0px">
+                <img src="shoe10.jpg" height="50px" width="50px" style="display:block;"> 
+            </td>
+            <td>Blue-White Puma Comfortable Shoe</td>
+            <td>90</td>
+            <td>20,000</td>
+            <td>In-Stock</td>
+            <td style="text-align:center;">
+            <div class="button">    <button class="clsActionButton moveright" id="idAddButton" onclick="idEditButton_onclick();">Edit</button> </div>
+
+             <div class="button">   <button class="clsActionButton moveright" id="idEditButton" onclick="idDeleteButton_onclick();">Delete</button> </div>
+
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+  </body>
+</html>
